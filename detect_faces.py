@@ -1,5 +1,5 @@
 # USAGE
-# python detect_faces.py --face cascades/haarcascade_frontalface_default.xml --image images/obama.png
+# python detect_faces.py --face haarcascade_frontalface_default.xml --eye haarcascade_eyes_default.xml --image face_n_eyes.png
 
 # import the necessary packages
 import argparse
@@ -48,7 +48,7 @@ else:
 	eyeRects = eye_detector.detectMultiScale(roi_gray, scaleFactor=1.05, minNeighbors=5,
 		minSize=(3, 3), flags=cv2.CASCADE_SCALE_IMAGE)
 
-#loop over the eyers and draw rectangle around each
+#loop over the eyes and draw rectangle around each
 
 for (x,y,w,h) in eyeRects:
 	cv2.rectangle(roi_color, (x, y), (x + w, y + h), (255, 0, 0), 2)
